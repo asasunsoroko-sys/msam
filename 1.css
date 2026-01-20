@@ -1,0 +1,61 @@
+.cover {
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg, #ffffff 55%, #eff6ff);
+}
+
+.cover-content {
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeScale 1.2s ease forwards;
+}
+
+.cover-logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 28px;
+    animation: logoDrop 1.1s ease forwards;
+}
+
+.cover h1 {
+    font-size: 64px;
+    letter-spacing: 5px;
+    color: #1e3a8a;
+    margin-bottom: 12px;
+}
+
+.cover p {
+    font-size: 22px;
+    opacity: 0.9;
+}
+
+.cover-tagline {
+    margin-top: 10px;
+    font-size: 18px;
+    opacity: 0.7;
+}
+
+/* Анимации */
+@keyframes logoDrop {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeScale {
+    from {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

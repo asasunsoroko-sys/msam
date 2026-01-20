@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>МСАМ — Международное сообщество</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Новостные шрифты -->
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'PT Serif', serif;
+    background: linear-gradient(180deg, #ffffff, #f8fafc);
+    color: #0f172a;
+}
+
+/* ===== ОБЩАЯ ЛЕНТА ===== */
+.slide {
+    min-height: 100vh;
+    padding: 90px 8%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* Плавный переход между секциями */
+.slide::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0), #ffffff);
+    pointer-events: none;
+}
+
+.left {
+    width: 55%;
+    z-index: 2;
+    animation: fadeLeft 1s ease forwards;
+}
+
+.right {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+    animation: fadeRight 1.2s ease forwards;
+}
+
+/* ===== ТИПОГРАФИЯ ===== */
+h1 {
+    font-family: 'Merriweather', serif;
+    font-size: 46px;
+    font-weight: 700;
+    color: #1e3a8a;
+    margin-bottom: 22px;
+}
+
+p {
+    font-size: 21px;
+    line-height: 1.75;
+    margin-bottom: 14px;
+    opacity: 0.95;
+}
+
+ul {
+    margin-top: 18px;
+    padding-left: 20px;
+}
+
+li {
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+/* ===== ФОТО ===== */
+.photo {
+    width: 540px;
+    height: 580px;
+    object-fit: cover;
+    border-radius: 26px;
+    box-shadow: 0 30px 70px rgba(30,58,138,0.35);
+}
+
+/* ===== ОБЛОЖКА ===== */
+.cover {
+    justify-content: center;
+    text-align: center;
+    background:
+        radial-gradient(circle at top, #fde04755, transparent 40%),
+        radial-gradient(circle at bottom right, #2563eb55, transparent 45%),
+        #ffffff;
+}
+
+.cover-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeUp 1.3s ease forwards;
+}
+
+.cover-logo {
+    width: 400px;
+    margin-bottom: 30px;
+    animation: logoDrop 1.1s ease forwards;
+}
+
+.cover h1 {
+    font-size: 62px;
+    letter-spacing: 4px;
+}
+
+.cover p {
+    font-size: 22px;
+    max-width: 720px;
+}
+
+.cover-tagline {
+    margin-top: 12px;
+    opacity: 0.7;
+    font-size: 18px;
+}
+
+/* ===== ФОНОВЫЕ АКЦЕНТЫ ===== */
+.bg-yellow {
+    background:
+        radial-gradient(circle at left, #fde04766, transparent 40%),
+        #ffffff;
+}
+
+.bg-blue {
+    background:
+        radial-gradient(circle at right, #2563eb55, transparent 42%),
+        #ffffff;
+}
+
+/* ===== АНИМАЦИИ ===== */
+@keyframes fadeLeft {
+    from { opacity: 0; transform: translateX(-40px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeRight {
+    from { opacity: 0; transform: translateX(40px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes logoDrop {
+    from { opacity: 0; transform: translateY(-25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== АДАПТИВ ===== */
+@media (max-width: 900px) {
+    .slide {
+        flex-direction: column;
+        padding: 70px 6%;
+    }
+
+    .left, .right {
+        width: 100%;
+        text-align: center;
+    }
+
+    .photo {
+        margin-top: 32px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ОБЛОЖКА -->
+<section class="slide cover">
+    <div class="cover-content">
+        <img src="Лого.png" class="cover-logo" alt="Логотип МСАМ">
+        <h1>Международное Сообщество Активной Молодёжи</h1>
+        <p class="cover-tagline">Объединяем молодёжь. Соединяем страны. Создаём будущее.</p>
+    </div>
+</section>
+
+<!-- 1СЛАЙД -->
+<section class="slide bg-yellow">
+    <div class="left">
+        <h1>Кто мы?</h1>
+        <p>
+            МСАМ — это международная онлайн-платформа, где активная 
+            молодёжь из разных стран находит друг друга, делится опытом
+            и действует вместе.
+        </p>
+    </div>
+    <div class="right">
+        <img src="6.jpg" class="photo">
+    </div>
+</section>
+
+<!-- 2СЛАЙД -->
+<section class="slide bg-yellow">
+    <div class="left">
+        <h1>Как всё началось?</h1>
+        <p>
+             Проект сформировался на Первом Международном Слёте МАДО
+             во Всероссийском детском центре «Океан».
+        </p>
+    </div>
+    <div class="right">
+        <img src="8.jpg" class="photo">
+    </div>
+</section>
+
+<!-- 3СЛАЙД -->
+<section class="slide bg-yellow">
+    <div class="left">
+        <h1>Что такое МАДО?</h1>
+        <p>
+            Международная Ассоциация Детских Организаций —
+            это союз молодёжных движений со всего мира.
+        </p>
+        <p>
+            Более 20 стран, включая Индию, Марокко, страны Африки,
+            Казахстан и Беларусь, уже стали частью этого движения.
+        </p>
+    </div>
+    <div class="right">
+        <img src="3.jpg" class="photo">
+    </div>
+</section>
+
+<!-- 4СЛАЙД -->
+<section class="slide bg-yellow">
+    <div class="left">
+        <h1>МСАМ сегодня</h1>
+        <p>
+             Проект был представлен МАДО в августе 2025 года.
+        </p>
+         <p>
+            Пока документы проходят финальное подписание,
+            участники уже начали активную реализацию инициатив.
+        </p>
+    </div>
+    <div class="right">
+        <img src="5.jpg" class="photo">
+    </div>
+</section>
+
+<!-- 5СЛАЙД -->
+<section class="slide bg-yellow">
+    <div class="left">
+        <h1>Чем мы занимаемся?</h1>
+        <ul>
+            <li>📢 Представляем голос молодёжи своей страны</li>
+            <li>🎥 Показываем реальную жизнь активных ребят</li>
+            <li>🌍 Рассказываем о культуре и традициях</li>
+            <li>⭐ Знакомим мир с молодыми лидерами</li>
+        </ul>
+    </div>
+    <div class="right">
+        <img src="9.jpg" class="photo">
+    </div>
+</section>
+
+<!-- 6СЛАЙД -->
+<section class="slide bg-yellow">
+    <div class="left">
+        <h1>Как устроена команда?</h1>
+        <p>
+            В каждой стране работают кураторы, которые формируют
+            свои команды активных и инициативных молодых людей.
+        </p>
+        <p>
+            Это те, кто связывает молодёжь, культуру и страны.
+        </p>
+    </div>
+    <div class="right">
+        <img src="7.jpg" class="photo">
+    </div>
+</section>
+
+<!-- 7СЛАЙД -->
+<section class="slide bg-yellow">
+    <div class="left">
+        <h1>Наши планы</h1>
+        <ul>
+            <li>🚀 Запуск проекта во всех странах-участницах</li>
+            <li>🤝 Создание международных онлайн-клубов</li>
+            <li>📅 Регулярный контент от каждой страны</li>
+        </ul>
+    </div>
+    <div class="right">
+        <img src="10.jpg" class="photo">
+    </div>
+</section>
+
+</body>
+</html>
+
